@@ -40,27 +40,27 @@ LOCK TABLES `Esami` WRITE;
 
 INSERT INTO `Esami` (`codins`, `voto`, `crediti`, `nomecorso`)
 VALUES
-	('16ACFPL',10,27,'Analisi matematica I'),
-	('16AHMPL',8,26,'Chimica'),
-	('12BHDPL',8,25,'Informatica'),
-	('07LKIPL',3,24,'Lingua inglese I livello'),
-	('01RKCPL',10,23,'Algebra lineare e geometria'),
-	('01PNNPL',6,22,'Crediti liberi del 1 anno'),
-	('15AXOPL',10,21,'Fisica I'),
-	('23ACIPL',8,23,'Analisi matematica II'),
-	('14AFQPL',8,27,'Basi di dati'),
-	('20AXPPL',6,28,'Fisica II'),
-	('12CKRPL',10,30,'Statistica'),
-	('06ARHPL',8,22,'Economia e organizzazione aziendale'),
-	('07CESPL',8,18,'Ricerca operativa'),
-	('07CHWPL',8,30,'Sistemi di produzione'),
-	('04CIIPL',8,18,'Sistemi elettrici industriali'),
-	('01QNAPL',8,19,'Elementi di diritto privato'),
-	('09CBIPL',8,29,'Programmazione a oggetti'),
-	('02CBRPL',10,30,'Programmazione e gestione della produzione'),
-	('01NBDPL',8,27,'Sistemi telematici'),
-	('01QYVPL',6,22,'Crediti liberi del 3° anno'),
-	('01NBEPL',8,19,'Progettazione di servizi web e reti di calcolatori');
+	('16ACFPL',27,10,'Analisi matematica I'),
+	('16AHMPL',26,8,'Chimica'),
+	('12BHDPL',25,8,'Informatica'),
+	('07LKIPL',24,3,'Lingua inglese I livello'),
+	('01RKCPL',23,10,'Algebra lineare e geometria'),
+	('01PNNPL',22,6,'Crediti liberi del 1 anno'),
+	('15AXOPL',21,10,'Fisica I'),
+	('23ACIPL',23,8,'Analisi matematica II'),
+	('14AFQPL',27,8,'Basi di dati'),
+	('20AXPPL',28,6,'Fisica II'),
+	('12CKRPL',30,10,'Statistica'),
+	('06ARHPL',22,8,'Economia e organizzazione aziendale'),
+	('07CESPL',18,8,'Ricerca operativa'),
+	('07CHWPL',30,8,'Sistemi di produzione'),
+	('04CIIPL',18,8,'Sistemi elettrici industriali'),
+	('01QNAPL',19,8,'Elementi di diritto privato'),
+	('09CBIPL',29,8,'Programmazione a oggetti'),
+	('02CBRPL',30,10,'Programmazione e gestione della produzione'),
+	('01NBDPL',27,8,'Sistemi telematici'),
+	('01QYVPL',22,6,'Crediti liberi del 3° anno'),
+	('01NBEPL',19,8,'Progettazione di servizi web e reti di calcolatori');
 
 /*!40000 ALTER TABLE `Esami` ENABLE KEYS */;
 UNLOCK TABLES;

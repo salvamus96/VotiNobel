@@ -11,7 +11,7 @@ public class Esame {
 
 	}
 
-	public Esame(String codins, String nomecorso, int voto, int crediti) {
+	public Esame(String codins, String nomecorso, int crediti, int voto) {
 		this.codins = codins;
 		this.nomeCorso = nomecorso;
 		this.voto = voto;
