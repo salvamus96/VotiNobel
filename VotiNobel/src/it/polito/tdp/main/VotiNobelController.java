@@ -33,20 +33,24 @@ public class VotiNobelController {
 
     @FXML
     void doCalcolaCombinazione(ActionEvent event) {
-    		try {
-    			int numeroCrediti = Integer.parseInt(txtInput.getText());
-    			List<Esame> voti = model.calcolaSottoinsiemeEsami(numeroCrediti);
-    			
-    		} catch (NumberFormatException e) {
-    			txtResult.setText("Inserire un numero di crediti > 0");
-    		}
+    	txtResult.clear();
+    	
+    	try {
+    		int numeroCrediti = Integer.parseInt(txtInput.getText());
+    		List<Esame> voti = model.calcolaSottoinsiemeEsami(numeroCrediti);
+    		for (Esame e : voti)   			
+    			txtResult.appendText(e + "\n");
+    		
+    	} catch (NumberFormatException e) {
+   			txtResult.setText("Inserire un numero di crediti > 0");
+   		}
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    		// reset the UI
-    		txtInput.clear();
-    		txtResult.clear();
+    	// reset the UI
+    	txtInput.clear();
+    	txtResult.clear();
     }
 
     @FXML

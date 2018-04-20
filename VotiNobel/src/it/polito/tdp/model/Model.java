@@ -14,6 +14,8 @@ public class Model {
 	
 	public Model() {
 		edao = new EsameDAO();
+		
+		// carico i dati dal database
 		esami = edao.getTuttiEsami();
 //		for (Esame e: esami) {
 //			System.out.println(e);
@@ -21,7 +23,8 @@ public class Model {
 	}
 	
 	public List<Esame> calcolaSottoinsiemeEsami(int numeroCrediti) {
-		// inizializzazione
+		// inizializzazione della soluzione e della relativa media 
+		// (strutture dati utili nella ricorsione)
 		soluzione = new ArrayList<Esame>();
 		bestAvg = 0.0;
 		
@@ -40,15 +43,17 @@ public class Model {
 		return somma;
 	}
 	
+	// media pesata
 	public double avg(List<Esame> parziale) {
 		double avg = 0;
 		for (Esame e : parziale) {
 			avg += e.getCrediti() * e.getVoto();
 		}
-		avg /= totCrediti(parziale);
+		avg /= totCrediti(parziale); // richiamo la funzione sopra
 		return avg;
 	}
 	
+	// quando siamo interessati alla soluzione ottima la ricorsiva più essere boolean e non void
 	private void recursive(int step, List<Esame> parziale, int numeroCrediti) {
 		
 		// Debug ??
@@ -66,14 +71,16 @@ public class Model {
 		// Controllo se ho trovato una nuova soluzione migliore
 		if (totCrediti(parziale) == numeroCrediti) {
 			if (avg(parziale) > bestAvg) {
-				soluzione = new ArrayList(parziale);
-				bestAvg = avg(parziale);
+				// soluzione migliore trovata perciò aggiorno le mie variabili
+				soluzione = new ArrayList<>(parziale);
+				bestAvg = avg(parziale); 
 			}
 		}
 		
 		// Generazione di una nuova soluzione parziale
 		for (Esame esame : esami) {
-			if (!parziale.contains(esame)) {
+			// lo stesso esame non può essere ripetuto nella soluzione
+			if (!parziale.contains(esame)) { // ricorda di implementare hashCode e equals
 				parziale.add(esame);
 				recursive(step+1, parziale, numeroCrediti);
 				parziale.remove(esame);
